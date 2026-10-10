@@ -136,7 +136,7 @@ export function legEndpoints(
  * the path still starts and ends where the aircraft did. A 5,000-point trace
  * is ~120 KB and renders no better than a few hundred at map scale.
  */
-export function downsample<T>(points: T[], max: number): T[] {
+function downsample<T>(points: T[], max: number): T[] {
   if (points.length <= max) return points;
   const step = (points.length - 1) / (max - 1);
   const out: T[] = [];
