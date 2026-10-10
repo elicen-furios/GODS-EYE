@@ -42,7 +42,7 @@ export interface AircraftDetail {
 }
 
 /** readsb shards traces by the last two characters of the hex address. */
-export function shardFor(icao24: string): string {
+function shardFor(icao24: string): string {
   return icao24.trim().toLowerCase().slice(-2);
 }
 
