@@ -66,7 +66,7 @@ interface TraceFile {
  * from the newest point: skip time parked, take the airborne run, and stop at
  * the previous stint on the ground.
  */
-export function currentLeg(
+function currentLeg(
   rows: Array<Array<number | string | null>>,
   /** Ground samples in a row before it counts as a real stop, not a blip. */
   minGroundRun = 4,
@@ -114,7 +114,7 @@ const DEPARTURE_CEILING_FT = 10_000;
  * Anything else stays null. An aircraft first seen at cruise has no knowable
  * origin, and one still airborne has no knowable destination.
  */
-export function legEndpoints(
+function legEndpoints(
   track: [number, number][],
   altitudes: (number | null)[],
   landed: boolean,
@@ -145,7 +145,7 @@ function downsample<T>(points: T[], max: number): T[] {
 }
 
 /** Pull identity and the flown path out of a readsb trace file. */
-export function parseTrace(
+function parseTrace(
   json: TraceFile,
   maxPoints = 700,
   /** Draw only the flight in progress; the full history is rarely meaningful. */
